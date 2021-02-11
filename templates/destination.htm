@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include 'base.html' %}
+<body>
+<div class="container">
+<h1>{{ data[dest].country }}</h1>
+<p>ID: {{ tourId }}</p>
+<p>Description: {{ data[tourId].description }}</p>  <!--access data in Nested Dict without iteration Flask. Found on stackoverflow -->
+</div>
+</body>
+</html>
