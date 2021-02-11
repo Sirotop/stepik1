@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include 'base.html' %}
+<body>
+<div class="container">
+<h1>Направления</h1>
+    {% for item in deps.values() %}
+    <a href="">{{ item }}</a>
+    {% endfor %}
+    <br>
+    <!--- {% for key,value in deps.items() %}
+    <div class="card">
+        <div class="card-body">
+            <a class="card-link" href="">{{ value }}</a>
+            <ul class="list-group list-group-flush">
+                <p></p>
+                <li class="list-group-item"></li>
+                <li class="list-group-item"></li>
+                <li class="list-group-item"></li>
+            </ul>
+        </div>
+    </div>
+
+    {% endfor %} --->
+</div>
+</body>
+</html>

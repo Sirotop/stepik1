@@ -253,21 +253,25 @@ tours = {
 app = Flask(__name__)
 @app.route('/')
 def render_main():
-    return render_template("index.html", data=tours, test="test")
+    return render_template("index.html", data=tours, deps=departures)
 
-@app.route('/<int:tourId>')
+@app.route('/tour/<int:tourId>')
 def render_tour(tourId):
-    print(tourId)
     if tourId in tours:
         return render_template("tour.html", data=tours, tourId=tourId, filter=6)
     else:
         return "No tour with this ID found"
-@app.route('/destination/<dest>')
-def render_destination(dest):
-    if dest in tours.country():
-        return render_template("destination.html", data=tours, dest=dest)
+
+@app.route('/departures/')
+def render_departures():
+    return render_template("departures.html", deps=departures)
+
+@app.route('/departures/<dep>')
+def render_destination(dep):
+    if dep in departures:
+        return render_template("departure.html", data=tours, dep=dep, deps=departures)
     else:
-        return "No tours for this destination"
+        return "No tours from this departure"
 
 @app.route('/404')
 def render_404():

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include 'base.html' %}
+<body>
+<div class="container">
+<h1>{{ deps[dep] }}</h1>
+
+    <ul>
+        {% for id,tour in data.items() %}
+        {% if tour.departure == dep %}
+        <li><a href="/tour/{{id}}">{{ tour.title }}</a></li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>
