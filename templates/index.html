@@ -3,6 +3,11 @@
 {% include 'base.html' %}
 
 <div class="container">
+    <h1>Направления</h1>
+    {% for item in deps.values() %}
+    <a href="/">{{ item }}</a>
+    {% endfor %}
+    <br>
 {% for id,tour in data.items() %}
     {% if loop.index <= 6 %} <!--- Couldn't pass the Filter variable --->
     <div class="card" style="width:20rem;">

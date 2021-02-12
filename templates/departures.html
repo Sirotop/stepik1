@@ -4,8 +4,8 @@
 <body>
 <div class="container">
 <h1>Направления</h1>
-    {% for item in deps.values() %}
-    <a href="">{{ item }}</a>
+    {% for item in deps.items() %}
+    <a href="/departures/">{{ item }}</a>
     {% endfor %}
     <br>
     <!--- {% for key,value in deps.items() %}
