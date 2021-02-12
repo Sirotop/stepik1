@@ -7,7 +7,7 @@
     {% if loop.index <= 6 %} <!--- Couldn't pass the Filter variable --->
     <div class="card" style="width:20rem;">
         <div class="card-body">
-            <h5 class="card-title"><a href="/{{ id }}">{{ tour.title }}</a></h5>
+            <h5 class="card-title"><a href="tour/{{ id }}">{{ tour.title }}</a></h5>
             <p>Tour ID: <a href="/{{ id }}">{{ id }}</a></p>
             <p class="card-text">{{ tour.description|truncate(150) }}</p>
             <p class="card-text">Направление: {{ tour.country }}</p>
